@@ -102,6 +102,7 @@
       line-height: 1.06;
       letter-spacing: -.075em;
     }
+    .mobile-break { display: none; }
     .hero p {
       margin: 28px 0 0;
       color: #aab2c4;
@@ -265,6 +266,7 @@
       main { padding-top: 72px; }
       .hero::after { display: none; }
       h1 { font-size: clamp(42px, 13vw, 62px); }
+      .mobile-break { display: block; }
       .apps { grid-template-columns: 1fr; margin-top: 58px; }
       .app-card { min-height: 360px; }
       .chart { width: 50%; opacity: .38; }
@@ -291,7 +293,7 @@
   <main>
     <div class="shell">
       <section class="hero">
-        <h1>차트를 읽는<br>당신을 테스트합니다.</h1>
+        <h1>차트를 읽는<br>당신을<span class="mobile-break"><br></span> 테스트합니다.</h1>
         <p>감이 아니라 선택으로 확인하는 트레이딩 적성 테스트</p>
       </section>
 
