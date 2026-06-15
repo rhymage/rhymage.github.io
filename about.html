@@ -18,9 +18,13 @@
     header { border-bottom:1px solid var(--line); }
     .nav { min-height:58px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
     .brand { font-size:16px; font-weight:750; letter-spacing:-.025em; text-decoration:none; }
-    .nav-links,.footer-links { display:flex; gap:20px; }
+    .nav-actions,.nav-links,.footer-links { display:flex; align-items:center; }
+    .nav-actions { gap:16px; }
+    .nav-links,.footer-links { gap:20px; }
     .nav-links a,footer a { color:var(--muted); font-size:12px; text-decoration:none; transition:color .18s ease; }
     .nav-links a:hover,footer a:hover { color:var(--text); }
+    .lang-toggle { min-width:36px; height:28px; padding:0 9px; border:1px solid var(--line); border-radius:8px; color:var(--muted); background:var(--surface); font:700 11px/1 Pretendard,system-ui,sans-serif; cursor:pointer; transition:color .18s ease,border-color .18s ease,background .18s ease; }
+    .lang-toggle:hover { color:var(--text); border-color:#d5d7d1; background:var(--soft); }
     main { padding:68px 0 96px; }
     .intro { margin-bottom:24px; }
     h1 { margin:0 0 8px; font-size:26px; line-height:1.25; letter-spacing:-.045em; }
@@ -34,43 +38,46 @@
     footer { border-top:1px solid var(--line); color:#969a94; }
     .footer-inner { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:20px; font-size:11px; }
     .footer-links { gap:18px; }
-    @media (max-width:620px) { .shell{width:min(100% - 28px,480px)} main{padding:46px 0 72px} h1{font-size:23px} .content{padding:22px;border-radius:12px} .footer-inner{min-height:76px;align-items:flex-start;flex-direction:column;justify-content:center;gap:9px} }
+    @media (max-width:620px) { .shell{width:min(100% - 28px,480px)} .nav{gap:12px}.nav-actions{gap:10px}.nav-links{gap:12px} main{padding:46px 0 72px} h1{font-size:23px} .content{padding:22px;border-radius:12px} .footer-inner{min-height:76px;align-items:flex-start;flex-direction:column;justify-content:center;gap:9px} }
   </style>
 </head>
-<body>
+<body data-page="about">
   <header>
     <div class="shell nav">
       <a class="brand" href="/">Rhymage Apps</a>
-      <nav class="nav-links" aria-label="주요 메뉴">
-        <a href="/about.html">소개</a>
-        <a href="/privacy.html">개인정보처리방침</a>
-      </nav>
+      <div class="nav-actions">
+        <nav class="nav-links" aria-label="주요 메뉴" data-i18n-aria="navLabel">
+          <a href="/about.html" data-i18n="navAbout">소개</a>
+          <a href="/privacy.html" data-i18n="navPrivacy">개인정보처리방침</a>
+        </nav>
+        <button class="lang-toggle" id="lang-toggle" type="button">EN</button>
+      </div>
     </div>
   </header>
   <main>
     <div class="shell">
       <section class="intro">
-        <h1>서비스 소개</h1>
-        <p>브라우저에서 바로 즐길 수 있는 작고 재미있는 웹앱을 만듭니다.</p>
+        <h1 data-i18n="heading">서비스 소개</h1>
+        <p data-i18n="lead">브라우저에서 바로 즐길 수 있는 작고 재미있는 웹앱을 만듭니다.</p>
       </section>
       <article class="content">
         <section>
-          <h2>단타 적성검사</h2>
-          <p>실제 미국 주식의 과거 일봉 차트를 종목명을 모르는 상태에서 플레이하고, 바이앤홀드 대비 성적으로 단타 적성을 확인하는 모의 게임입니다.</p>
-          <a class="game-link" href="/stockgame/">주식단타 시작하기</a>
+          <h2 data-i18n="stockTitle">단타 적성검사</h2>
+          <p data-i18n="stockDesc">실제 미국 주식의 과거 일봉 차트를 종목명을 모르는 상태에서 플레이하고, 바이앤홀드 대비 성적으로 단타 적성을 확인하는 모의 게임입니다.</p>
+          <a class="game-link" href="/stockgame/" data-i18n="stockLink">주식단타 시작하기</a>
         </section>
         <section>
-          <h2>코인선물 적성검사</h2>
-          <p>실제 과거 코인 5분봉 차트에서 롱과 숏 포지션을 선택하며 선물 거래 감각과 위험 관리 성향을 확인하는 모의 게임입니다.</p>
-          <a class="game-link" href="/coingame/">코인선물 시작하기</a>
+          <h2 data-i18n="coinTitle">코인선물 적성검사</h2>
+          <p data-i18n="coinDesc">실제 과거 코인 5분봉 차트에서 롱과 숏 포지션을 선택하며 선물 거래 감각과 위험 관리 성향을 확인하는 모의 게임입니다.</p>
+          <a class="game-link" href="/coingame/" data-i18n="coinLink">코인선물 시작하기</a>
         </section>
         <section>
-          <h2>이용 안내</h2>
-          <p>모든 서비스는 재미와 교육을 위한 모의 체험이며 투자 권유가 아닙니다. 과거 데이터와 게임 결과는 실제 투자 성과를 보장하지 않습니다.</p>
+          <h2 data-i18n="guideTitle">이용 안내</h2>
+          <p data-i18n="guideDesc">모든 서비스는 재미와 교육을 위한 모의 체험이며 투자 권유가 아닙니다. 과거 데이터와 게임 결과는 실제 투자 성과를 보장하지 않습니다.</p>
         </section>
         <section>
-          <h2>문의 및 피드백</h2>
-          <p>서비스 관련 문의와 오류 제보는 <a href="https://github.com/rhymage/rhymage.github.io/issues">GitHub Issues</a>를 이용해 주세요.</p>
+          <h2 data-i18n="contactTitle">문의 및 피드백</h2>
+          <p data-i18n-html="contactDesc">서비스 관련 문의와 오류 제보는 <a href="https://github.com/rhymage/rhymage.github.io/issues">GitHub Issues</a>를 이용해 주세요.</p>
         </section>
       </article>
     </div>
@@ -78,8 +85,9 @@
   <footer>
     <div class="shell footer-inner">
       <span>© 2026 Rhymage Apps</span>
-      <div class="footer-links"><a href="/">Apps</a><a href="/privacy.html">개인정보처리방침</a></div>
+      <div class="footer-links"><a href="/">Apps</a><a href="/privacy.html" data-i18n="navPrivacy">개인정보처리방침</a></div>
     </div>
   </footer>
+  <script src="/lang.js?v=1"></script>
 </body>
 </html>

@@ -18,9 +18,13 @@
     header { border-bottom:1px solid var(--line); }
     .nav { min-height:58px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
     .brand { font-size:16px; font-weight:750; letter-spacing:-.025em; text-decoration:none; }
-    .nav-links,.footer-links { display:flex; gap:20px; }
+    .nav-actions,.nav-links,.footer-links { display:flex; align-items:center; }
+    .nav-actions { gap:16px; }
+    .nav-links,.footer-links { gap:20px; }
     .nav-links a,footer a { color:var(--muted); font-size:12px; text-decoration:none; transition:color .18s ease; }
     .nav-links a:hover,footer a:hover { color:var(--text); }
+    .lang-toggle { min-width:36px; height:28px; padding:0 9px; border:1px solid var(--line); border-radius:8px; color:var(--muted); background:var(--surface); font:700 11px/1 Pretendard,system-ui,sans-serif; cursor:pointer; transition:color .18s ease,border-color .18s ease,background .18s ease; }
+    .lang-toggle:hover { color:var(--text); border-color:#d5d7d1; background:#fff; }
     main { padding:68px 0 96px; }
     .intro { margin-bottom:24px; }
     h1 { margin:0 0 8px; font-size:26px; line-height:1.25; letter-spacing:-.045em; }
@@ -34,50 +38,53 @@
     footer { border-top:1px solid var(--line); color:#969a94; }
     .footer-inner { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:20px; font-size:11px; }
     .footer-links { gap:18px; }
-    @media (max-width:620px) { .shell{width:min(100% - 28px,480px)} main{padding:46px 0 72px} h1{font-size:23px} .content{padding:22px;border-radius:12px} .footer-inner{min-height:76px;align-items:flex-start;flex-direction:column;justify-content:center;gap:9px} }
+    @media (max-width:620px) { .shell{width:min(100% - 28px,480px)} .nav{gap:12px}.nav-actions{gap:10px}.nav-links{gap:12px} main{padding:46px 0 72px} h1{font-size:23px} .content{padding:22px;border-radius:12px} .footer-inner{min-height:76px;align-items:flex-start;flex-direction:column;justify-content:center;gap:9px} }
   </style>
 </head>
-<body>
+<body data-page="privacy">
   <header>
     <div class="shell nav">
       <a class="brand" href="/">Rhymage Apps</a>
-      <nav class="nav-links" aria-label="주요 메뉴">
-        <a href="/about.html">소개</a>
-        <a href="/privacy.html">개인정보처리방침</a>
-      </nav>
+      <div class="nav-actions">
+        <nav class="nav-links" aria-label="주요 메뉴" data-i18n-aria="navLabel">
+          <a href="/about.html" data-i18n="navAbout">소개</a>
+          <a href="/privacy.html" data-i18n="navPrivacy">개인정보처리방침</a>
+        </nav>
+        <button class="lang-toggle" id="lang-toggle" type="button">EN</button>
+      </div>
     </div>
   </header>
   <main>
     <div class="shell">
       <section class="intro">
-        <h1>개인정보처리방침</h1>
-        <p>시행일: 2026년 6월 11일</p>
+        <h1 data-i18n="heading">개인정보처리방침</h1>
+        <p data-i18n="effective">시행일: 2026년 6월 11일</p>
       </section>
       <article class="content">
         <section>
-          <h2>서비스와 저장 정보</h2>
-          <p>Rhymage Apps는 별도의 회원가입 기능을 제공하지 않습니다. 게임 결과와 플레이 기록은 사용자의 브라우저 로컬 저장소에 저장될 수 있습니다.</p>
+          <h2 data-i18n="storageTitle">서비스와 저장 정보</h2>
+          <p data-i18n="storageDesc">Rhymage Apps는 별도의 회원가입 기능을 제공하지 않습니다. 게임 결과와 플레이 기록은 사용자의 브라우저 로컬 저장소에 저장될 수 있습니다.</p>
         </section>
         <section>
-          <h2>방문 통계 및 Google Analytics</h2>
-          <p>서비스 개선과 이용 현황 파악을 위해 Google Analytics 4를 사용합니다. 페이지 조회, 게임 시작 및 완료, 획득 등급, 매매 횟수, 도전장 복사, 결과 카드 저장 등의 이용 이벤트와 기기·브라우저·대략적인 지역 정보가 Google에 전송될 수 있습니다. 이름, 이메일, 종목명 등 직접적인 개인 식별 정보는 분석 이벤트로 전송하지 않습니다.</p>
-          <p>사용자는 <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer">Google Analytics 차단 브라우저 부가기능</a>을 통해 데이터 수집을 제한할 수 있습니다.</p>
+          <h2 data-i18n="analyticsTitle">방문 통계 및 Google Analytics</h2>
+          <p data-i18n="analyticsDesc1">서비스 개선과 이용 현황 파악을 위해 Google Analytics 4를 사용합니다. 페이지 조회, 게임 시작 및 완료, 획득 등급, 매매 횟수, 도전장 복사, 결과 카드 저장 등의 이용 이벤트와 기기·브라우저·대략적인 지역 정보가 Google에 전송될 수 있습니다. 이름, 이메일, 종목명 등 직접적인 개인 식별 정보는 분석 이벤트로 전송하지 않습니다.</p>
+          <p data-i18n-html="analyticsDesc2">사용자는 <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer">Google Analytics 차단 브라우저 부가기능</a>을 통해 데이터 수집을 제한할 수 있습니다.</p>
         </section>
         <section>
-          <h2>광고 및 쿠키</h2>
-          <p>이 사이트는 Google AdSense를 사용할 수 있습니다. Google을 포함한 제3자 광고 제공업체는 쿠키를 사용하여 사용자의 이전 웹사이트 방문 기록을 바탕으로 광고를 게재할 수 있습니다. 사용자는 <a href="https://adssettings.google.com/" rel="noopener noreferrer">Google 광고 설정</a>에서 맞춤 광고를 관리할 수 있습니다.</p>
+          <h2 data-i18n="adsTitle">광고 및 쿠키</h2>
+          <p data-i18n-html="adsDesc">이 사이트는 Google AdSense를 사용할 수 있습니다. Google을 포함한 제3자 광고 제공업체는 쿠키를 사용하여 사용자의 이전 웹사이트 방문 기록을 바탕으로 광고를 게재할 수 있습니다. 사용자는 <a href="https://adssettings.google.com/" rel="noopener noreferrer">Google 광고 설정</a>에서 맞춤 광고를 관리할 수 있습니다.</p>
         </section>
         <section>
-          <h2>외부 서비스</h2>
-          <p>서비스 운영을 위해 GitHub Pages, Google Analytics, Google AdSense, jsDelivr 및 Yahoo Finance 기반 데이터가 사용될 수 있으며, 각 서비스에는 해당 사업자의 개인정보처리방침이 적용됩니다.</p>
+          <h2 data-i18n="externalTitle">외부 서비스</h2>
+          <p data-i18n="externalDesc">서비스 운영을 위해 GitHub Pages, Google Analytics, Google AdSense, jsDelivr 및 Yahoo Finance 기반 데이터가 사용될 수 있으며, 각 서비스에는 해당 사업자의 개인정보처리방침이 적용됩니다.</p>
         </section>
         <section>
-          <h2>저장 정보 관리</h2>
-          <p>게임 기록은 브라우저의 로컬 저장소에 최대 50개까지 저장될 수 있습니다. 브라우저 데이터 삭제 기능으로 언제든 삭제할 수 있습니다.</p>
+          <h2 data-i18n="manageTitle">저장 정보 관리</h2>
+          <p data-i18n="manageDesc">게임 기록은 브라우저의 로컬 저장소에 최대 50개까지 저장될 수 있습니다. 브라우저 데이터 삭제 기능으로 언제든 삭제할 수 있습니다.</p>
         </section>
         <section>
-          <h2>문의</h2>
-          <p>서비스 관련 문의는 <a href="https://github.com/rhymage/rhymage.github.io/issues">GitHub Issues</a>를 이용해 주세요.</p>
+          <h2 data-i18n="contactTitle">문의</h2>
+          <p data-i18n-html="contactDesc">서비스 관련 문의는 <a href="https://github.com/rhymage/rhymage.github.io/issues">GitHub Issues</a>를 이용해 주세요.</p>
         </section>
       </article>
     </div>
@@ -85,8 +92,9 @@
   <footer>
     <div class="shell footer-inner">
       <span>© 2026 Rhymage Apps</span>
-      <div class="footer-links"><a href="/">Apps</a><a href="/about.html">소개</a></div>
+      <div class="footer-links"><a href="/">Apps</a><a href="/about.html" data-i18n="navAbout">소개</a></div>
     </div>
   </footer>
+  <script src="/lang.js?v=1"></script>
 </body>
 </html>
