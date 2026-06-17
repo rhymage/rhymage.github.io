@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f5">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>코인선물 적성검사 | Crypto Futures Test | Rhymage Apps</title>
+  <meta name="description" content="코인선물 적성검사는 실제 과거 코인 5분봉 차트에서 롱 숏 판단, 선물 거래 감각, 위험 관리를 테스트하는 브라우저 게임입니다. Crypto Futures Test is a long short trading simulator and chart game.">
+  <link rel="canonical" href="https://app.rhymage.com/crypto-futures-test.html">
+  <meta property="og:title" content="코인선물 적성검사 | Crypto Futures Test">
+  <meta property="og:description" content="실제 과거 코인 5분봉 차트로 롱 숏 감각을 확인하는 브라우저 기반 선물 거래 게임입니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://app.rhymage.com/crypto-futures-test.html">
+  <meta property="og:image" content="https://app.rhymage.com/assets/cards/crypto-futures.svg">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    :root { color-scheme:light; --bg:#f7f7f5; --surface:#fff; --text:#171817; --muted:#777b76; --line:#e6e7e3; --soft:#f2f3f0; --accent:#3b648b; font-family:Pretendard,system-ui,sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; color:var(--text); background:var(--bg); }
+    a { color:inherit; }
+    .shell { width:min(1040px,calc(100% - 40px)); margin:0 auto; }
+    header { border-bottom:1px solid var(--line); }
+    .nav { min-height:58px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { font-size:16px; font-weight:750; letter-spacing:-.025em; text-decoration:none; }
+    .nav-actions,.nav-links,.footer-links { display:flex; align-items:center; }
+    .nav-actions { gap:16px; }
+    .nav-links,.footer-links { gap:20px; }
+    .nav-links a,footer a { color:var(--muted); font-size:12px; text-decoration:none; transition:color .18s ease; }
+    .nav-links a:hover,footer a:hover { color:var(--text); }
+    .lang-toggle { min-width:36px; height:28px; padding:0 9px; border:1px solid var(--line); border-radius:8px; color:var(--muted); background:var(--surface); font:700 11px/1 Pretendard,system-ui,sans-serif; cursor:pointer; transition:color .18s ease,border-color .18s ease,background .18s ease; }
+    .lang-toggle:hover { color:var(--text); border-color:#d5d7d1; background:var(--soft); }
+    main { padding:68px 0 96px; }
+    .back { display:inline-flex; margin-bottom:28px; color:var(--muted); font-size:12px; font-weight:700; text-decoration:none; }
+    .hero { display:grid; grid-template-columns:minmax(0,1fr) 180px; align-items:center; gap:36px; margin-bottom:28px; }
+    h1 { margin:0 0 10px; font-size:30px; line-height:1.2; letter-spacing:-.045em; }
+    .lead { margin:0; max-width:680px; color:var(--muted); font-size:15px; line-height:1.75; }
+    .hero-art { width:180px; aspect-ratio:1.24; border:1px solid var(--line); border-radius:18px; background:#ebf3f8; padding:18px; }
+    .hero-art img { width:100%; height:100%; display:block; object-fit:contain; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 0; }
+    .primary,.secondary { display:inline-flex; align-items:center; justify-content:center; min-height:42px; padding:0 16px; border-radius:10px; font-size:13px; font-weight:750; text-decoration:none; }
+    .primary { border:1px solid #355d81; color:#fff; background:var(--accent); }
+    .secondary { border:1px solid var(--line); color:#555a54; background:var(--surface); }
+    .content { max-width:820px; padding:30px; border:1px solid var(--line); border-radius:14px; background:var(--surface); }
+    .content section + section { margin-top:30px; padding-top:30px; border-top:1px solid var(--line); }
+    h2 { margin:0 0 12px; font-size:17px; letter-spacing:-.025em; }
+    h3 { margin:22px 0 8px; font-size:14px; letter-spacing:-.02em; }
+    p,li { color:#555a54; font-size:14px; line-height:1.8; }
+    p { margin:0; }
+    p + p { margin-top:10px; }
+    ul { margin:0; padding-left:18px; }
+    li + li { margin-top:6px; }
+    .notice { color:#777b76; font-size:12px; line-height:1.7; }
+    [hidden] { display:none !important; }
+    .shots { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+    .shot { margin:0; }
+    .shot a { display:block; text-decoration:none; }
+    .shot img { width:100%; aspect-ratio:9/16; display:block; object-fit:contain; border:1px solid var(--line); border-radius:12px; background:#f2f3f0; }
+    .shot figcaption { margin-top:6px; color:#777b76; font-size:11px; line-height:1.45; }
+    footer { border-top:1px solid var(--line); color:#969a94; }
+    .footer-inner { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:20px; font-size:11px; }
+    @media (max-width:720px) { .shell{width:min(100% - 28px,480px)} .nav{gap:12px}.nav-actions{gap:10px}.nav-links{gap:12px} main{padding:46px 0 72px}.hero{grid-template-columns:1fr;gap:20px} h1{font-size:25px}.hero-art{width:150px}.content{padding:22px;border-radius:12px}.shots{grid-template-columns:1fr}.footer-inner{min-height:76px;align-items:flex-start;flex-direction:column;justify-content:center;gap:9px} }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "코인선물 적성검사 / Crypto Futures Test",
+    "url": "https://app.rhymage.com/coingame/",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any",
+    "inLanguage": ["ko", "en"],
+    "description": "A browser-based crypto futures chart game for testing long short decisions, futures trading instincts, and risk management."
+  }
+  </script>
+</head>
+<body data-page="coinDetail">
+  <header>
+    <div class="shell nav">
+      <a class="brand" href="/">Rhymage Apps</a>
+      <div class="nav-actions">
+        <nav class="nav-links" aria-label="주요 메뉴" data-i18n-aria="navLabel">
+          <a href="/about.html" data-i18n="navAbout">소개</a>
+          <a href="/privacy.html" data-i18n="navPrivacy">개인정보처리방침</a>
+        </nav>
+        <button class="lang-toggle" id="lang-toggle" type="button">EN</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="shell">
+      <a class="back" href="/" data-i18n="backToApps">Apps로 돌아가기</a>
+      <section class="hero">
+        <div>
+          <h1 data-i18n="detailHeading">코인선물 적성검사</h1>
+          <p class="lead" data-i18n="detailLead">실제 과거 코인 5분봉 차트에서 롱과 숏을 선택하며 선물 거래 감각을 확인하는 차트 게임입니다.</p>
+          <div class="actions">
+            <a class="primary" href="/coingame/" data-i18n="startCoin">코인선물 적성검사 시작하기</a>
+            <a class="secondary" href="/stock-day-trading-test.html" data-i18n="viewStockDetail">단타 적성검사 보기</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true"><img src="/assets/cards/crypto-futures.svg" alt=""></div>
+      </section>
+      <article class="content">
+        <section lang="ko" data-locale="ko">
+          <h2>코인선물 적성검사란?</h2>
+          <p>코인선물 적성검사는 실제 과거 암호화폐 5분봉 차트를 보면서 롱과 숏 포지션을 판단하는 브라우저 기반 모의 게임입니다. 방향 선택, 진입 타이밍, 청산 판단, 수수료와 위험 관리 감각을 가볍게 확인할 수 있습니다.</p>
+          <p>코인 선물 거래 연습, 비트코인 롱 숏 테스트, 암호화폐 차트 게임, 선물 매매 감각 테스트처럼 검색되는 주제에 맞춰 만든 차트 기반 시뮬레이션입니다. 설치 없이 모바일 브라우저에서도 바로 플레이할 수 있습니다.</p>
+          <p>코인선물 적성검사, 코인 선물 거래 연습, 롱 숏 테스트, 비트코인 차트 게임, 암호화폐 선물 시뮬레이터, 5분봉 매매 연습을 찾는 사용자에게 빠르게 방향 판단을 연습할 수 있는 경험을 제공합니다.</p>
+        </section>
+        <section data-locale="ko">
+          <h2>게임 화면</h2>
+          <div class="shots">
+            <figure class="shot"><a href="/assets/screenshots/coin-intro.png" target="_blank" rel="noopener"><img src="/assets/screenshots/coin-intro.png" alt="코인선물 적성검사 시작 화면" loading="lazy"></a><figcaption>규칙과 시작 버튼</figcaption></figure>
+            <figure class="shot"><a href="/assets/screenshots/coin-chart.png" target="_blank" rel="noopener"><img src="/assets/screenshots/coin-chart.png" alt="코인 5분봉 차트 화면" loading="lazy"></a><figcaption>5분봉 차트 미리보기</figcaption></figure>
+            <figure class="shot"><a href="/assets/screenshots/coin-trade.png" target="_blank" rel="noopener"><img src="/assets/screenshots/coin-trade.png" alt="롱 숏 선물 거래 화면" loading="lazy"></a><figcaption>롱·숏 플레이</figcaption></figure>
+          </div>
+        </section>
+        <section lang="en" data-locale="en" hidden>
+          <h2>What Is the Crypto Futures Test?</h2>
+          <p>The Crypto Futures Test is a browser-based chart game that uses real historical crypto 5-minute candles. You choose long or short positions and check how your futures trading instincts respond to changing market movement.</p>
+          <p>It is made for people searching for a crypto futures simulator, Bitcoin long short test, cryptocurrency chart game, futures trading practice, risk management game, or a lightweight way to test trading decisions without installing an exchange app.</p>
+          <p>The page also describes a long short trading game, 5 minute candle simulator, futures trading aptitude test, crypto trading instincts challenge, and risk management practice experience for browser users.</p>
+        </section>
+        <section data-locale="en" hidden>
+          <h2>Game Screenshots</h2>
+          <div class="shots">
+            <figure class="shot"><a href="/assets/screenshots/coin-intro.png" target="_blank" rel="noopener"><img src="/assets/screenshots/coin-intro.png" alt="Crypto Futures Test start screen" loading="lazy"></a><figcaption>Rules and start button</figcaption></figure>
+            <figure class="shot"><a href="/assets/screenshots/coin-chart.png" target="_blank" rel="noopener"><img src="/assets/screenshots/coin-chart.png" alt="Crypto 5-minute candle chart screen" loading="lazy"></a><figcaption>5-minute chart preview</figcaption></figure>
+            <figure class="shot"><a href="/assets/screenshots/coin-trade.png" target="_blank" rel="noopener"><img src="/assets/screenshots/coin-trade.png" alt="Long and short futures trading controls" loading="lazy"></a><figcaption>Long and short gameplay</figcaption></figure>
+          </div>
+        </section>
+        <section data-locale="ko">
+          <h2>이용 안내</h2>
+          <p class="notice">이 서비스는 재미와 교육을 위한 모의 게임이며 투자 조언이나 투자 권유가 아닙니다. 과거 차트 결과는 실제 투자 성과를 보장하지 않습니다.</p>
+          <div class="actions">
+            <a class="primary" href="/coingame/" data-i18n="startCoin">코인선물 적성검사 시작하기</a>
+          </div>
+        </section>
+        <section data-locale="en" hidden>
+          <h2>Important Notice</h2>
+          <p class="notice">This service is a simulation for entertainment and education only. It is not investment advice, and historical chart results do not predict real trading performance.</p>
+          <div class="actions">
+            <a class="primary" href="/coingame/" data-i18n="startCoin">코인선물 적성검사 시작하기</a>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer>
+    <div class="shell footer-inner">
+      <span>Copyright © 2026 리메이지. All rights reserved.</span>
+      <div class="footer-links"><a href="/">Apps</a><a href="/privacy.html" data-i18n="navPrivacy">개인정보처리방침</a></div>
+    </div>
+  </footer>
+  <script src="/lang.js?v=6"></script>
+</body>
+</html>

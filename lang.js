@@ -4,11 +4,21 @@
       navAbout: "소개",
       navPrivacy: "개인정보처리방침",
       langLabel: "영어로 보기",
+      backToApps: "Apps로 돌아가기",
+      startStock: "단타 적성검사 시작하기",
+      startCoin: "코인선물 적성검사 시작하기",
+      viewStockDetail: "단타 적성검사 보기",
+      viewCoinDetail: "코인선물 적성검사 보기",
     },
     en: {
       navAbout: "About",
       navPrivacy: "Privacy Policy",
       langLabel: "View in Korean",
+      backToApps: "Back to Apps",
+      startStock: "Start Stock Day-Trading Test",
+      startCoin: "Start Crypto Futures Test",
+      viewStockDetail: "View Stock Day-Trading Test",
+      viewCoinDetail: "View Crypto Futures Test",
     },
   };
 
@@ -61,6 +71,38 @@
         importFromDesc: "Open the Import dialog directly from a chosen location",
         rhCharacterToolsTitle: "RH Character Tools",
         rhCharacterToolsDesc: "Automatic Mixamo character control-set tools",
+      },
+    },
+    stockDetail: {
+      ko: {
+        title: "단타 적성검사 | Stock Day-Trading Test | Rhymage Apps",
+        description: "단타 적성검사는 실제 과거 미국 주식 차트로 주식 단타 감각, 차트 읽기, 매수 매도 판단을 연습하는 브라우저 게임입니다. Stock Day-Trading Test is a chart reading and trading aptitude simulator.",
+        navLabel: "주요 메뉴",
+        detailHeading: "단타 적성검사",
+        detailLead: "실제 과거 미국 주식 차트를 보고 매수와 매도 타이밍을 판단하는 차트 읽기 게임입니다.",
+      },
+      en: {
+        title: "Stock Day-Trading Test | 단타 적성검사 | Rhymage Apps",
+        description: "Stock Day-Trading Test is a browser-based chart reading game and trading aptitude simulator using historical U.S. stock charts. 한국어 단타 적성검사 설명도 함께 제공합니다.",
+        navLabel: "Main menu",
+        detailHeading: "Stock Day-Trading Test",
+        detailLead: "A browser-based day trading simulator for practicing chart reading and trading decisions.",
+      },
+    },
+    coinDetail: {
+      ko: {
+        title: "코인선물 적성검사 | Crypto Futures Test | Rhymage Apps",
+        description: "코인선물 적성검사는 실제 과거 코인 5분봉 차트에서 롱 숏 판단, 선물 거래 감각, 위험 관리를 테스트하는 브라우저 게임입니다. Crypto Futures Test is a long short trading simulator.",
+        navLabel: "주요 메뉴",
+        detailHeading: "코인선물 적성검사",
+        detailLead: "실제 과거 코인 5분봉 차트에서 롱과 숏을 선택하며 선물 거래 감각을 확인하는 차트 게임입니다.",
+      },
+      en: {
+        title: "Crypto Futures Test | 코인선물 적성검사 | Rhymage Apps",
+        description: "Crypto Futures Test is a browser-based long short simulator and crypto chart game using historical 5-minute candles. 한국어 코인선물 적성검사 설명도 함께 제공합니다.",
+        navLabel: "Main menu",
+        detailHeading: "Crypto Futures Test",
+        detailLead: "A crypto futures simulator for testing long and short decisions in a browser.",
       },
     },
     about: {
@@ -164,6 +206,9 @@
     });
     document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
       if (strings[el.dataset.i18nAria] !== undefined) el.setAttribute("aria-label", strings[el.dataset.i18nAria]);
+    });
+    document.querySelectorAll("[data-locale]").forEach((el) => {
+      el.hidden = el.dataset.locale !== locale;
     });
     const button = document.querySelector("#lang-toggle");
     button.textContent = locale === "ko" ? "EN" : "KO";

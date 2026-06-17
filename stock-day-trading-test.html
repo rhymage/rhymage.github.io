@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f5">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>단타 적성검사 | Stock Day-Trading Test | Rhymage Apps</title>
+  <meta name="description" content="단타 적성검사는 실제 과거 미국 주식 차트로 주식 단타 감각, 차트 읽기, 매수 매도 판단을 연습하는 브라우저 게임입니다. Stock Day-Trading Test is a chart reading and trading aptitude simulator.">
+  <link rel="canonical" href="https://app.rhymage.com/stock-day-trading-test.html">
+  <meta property="og:title" content="단타 적성검사 | Stock Day-Trading Test">
+  <meta property="og:description" content="실제 과거 주식 차트로 단타 매매 감각을 확인하는 브라우저 기반 차트 게임입니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://app.rhymage.com/stock-day-trading-test.html">
+  <meta property="og:image" content="https://app.rhymage.com/assets/cards/stock-trading.svg">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    :root { color-scheme:light; --bg:#f7f7f5; --surface:#fff; --text:#171817; --muted:#777b76; --line:#e6e7e3; --soft:#f2f3f0; --accent:#986413; font-family:Pretendard,system-ui,sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; color:var(--text); background:var(--bg); }
+    a { color:inherit; }
+    .shell { width:min(1040px,calc(100% - 40px)); margin:0 auto; }
+    header { border-bottom:1px solid var(--line); }
+    .nav { min-height:58px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { font-size:16px; font-weight:750; letter-spacing:-.025em; text-decoration:none; }
+    .nav-actions,.nav-links,.footer-links { display:flex; align-items:center; }
+    .nav-actions { gap:16px; }
+    .nav-links,.footer-links { gap:20px; }
+    .nav-links a,footer a { color:var(--muted); font-size:12px; text-decoration:none; transition:color .18s ease; }
+    .nav-links a:hover,footer a:hover { color:var(--text); }
+    .lang-toggle { min-width:36px; height:28px; padding:0 9px; border:1px solid var(--line); border-radius:8px; color:var(--muted); background:var(--surface); font:700 11px/1 Pretendard,system-ui,sans-serif; cursor:pointer; transition:color .18s ease,border-color .18s ease,background .18s ease; }
+    .lang-toggle:hover { color:var(--text); border-color:#d5d7d1; background:var(--soft); }
+    main { padding:68px 0 96px; }
+    .back { display:inline-flex; margin-bottom:28px; color:var(--muted); font-size:12px; font-weight:700; text-decoration:none; }
+    .hero { display:grid; grid-template-columns:minmax(0,1fr) 180px; align-items:center; gap:36px; margin-bottom:28px; }
+    h1 { margin:0 0 10px; font-size:30px; line-height:1.2; letter-spacing:-.045em; }
+    .lead { margin:0; max-width:680px; color:var(--muted); font-size:15px; line-height:1.75; }
+    .hero-art { width:180px; aspect-ratio:1.24; border:1px solid var(--line); border-radius:18px; background:#fbf3e4; padding:18px; }
+    .hero-art img { width:100%; height:100%; display:block; object-fit:contain; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 0; }
+    .primary,.secondary { display:inline-flex; align-items:center; justify-content:center; min-height:42px; padding:0 16px; border-radius:10px; font-size:13px; font-weight:750; text-decoration:none; }
+    .primary { border:1px solid #b47a22; color:#fff; background:var(--accent); }
+    .secondary { border:1px solid var(--line); color:#555a54; background:var(--surface); }
+    .content { max-width:820px; padding:30px; border:1px solid var(--line); border-radius:14px; background:var(--surface); }
+    .content section + section { margin-top:30px; padding-top:30px; border-top:1px solid var(--line); }
+    h2 { margin:0 0 12px; font-size:17px; letter-spacing:-.025em; }
+    h3 { margin:22px 0 8px; font-size:14px; letter-spacing:-.02em; }
+    p,li { color:#555a54; font-size:14px; line-height:1.8; }
+    p { margin:0; }
+    p + p { margin-top:10px; }
+    ul { margin:0; padding-left:18px; }
+    li + li { margin-top:6px; }
+    .notice { color:#777b76; font-size:12px; line-height:1.7; }
+    [hidden] { display:none !important; }
+    .shots { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+    .shot { margin:0; }
+    .shot a { display:block; text-decoration:none; }
+    .shot img { width:100%; aspect-ratio:9/16; display:block; object-fit:contain; border:1px solid var(--line); border-radius:12px; background:#f2f3f0; }
+    .shot figcaption { margin-top:6px; color:#777b76; font-size:11px; line-height:1.45; }
+    footer { border-top:1px solid var(--line); color:#969a94; }
+    .footer-inner { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:20px; font-size:11px; }
+    @media (max-width:720px) { .shell{width:min(100% - 28px,480px)} .nav{gap:12px}.nav-actions{gap:10px}.nav-links{gap:12px} main{padding:46px 0 72px}.hero{grid-template-columns:1fr;gap:20px} h1{font-size:25px}.hero-art{width:150px}.content{padding:22px;border-radius:12px}.shots{grid-template-columns:1fr}.footer-inner{min-height:76px;align-items:flex-start;flex-direction:column;justify-content:center;gap:9px} }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "단타 적성검사 / Stock Day-Trading Test",
+    "url": "https://app.rhymage.com/stockgame/",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any",
+    "inLanguage": ["ko", "en"],
+    "description": "A browser-based stock chart reading game and day-trading aptitude test using historical U.S. stock charts."
+  }
+  </script>
+</head>
+<body data-page="stockDetail">
+  <header>
+    <div class="shell nav">
+      <a class="brand" href="/">Rhymage Apps</a>
+      <div class="nav-actions">
+        <nav class="nav-links" aria-label="주요 메뉴" data-i18n-aria="navLabel">
+          <a href="/about.html" data-i18n="navAbout">소개</a>
+          <a href="/privacy.html" data-i18n="navPrivacy">개인정보처리방침</a>
+        </nav>
+        <button class="lang-toggle" id="lang-toggle" type="button">EN</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="shell">
+      <a class="back" href="/" data-i18n="backToApps">Apps로 돌아가기</a>
+      <section class="hero">
+        <div>
+          <h1 data-i18n="detailHeading">단타 적성검사</h1>
+          <p class="lead" data-i18n="detailLead">실제 과거 미국 주식 차트를 보고 매수와 매도 타이밍을 판단하는 차트 읽기 게임입니다.</p>
+          <div class="actions">
+            <a class="primary" href="/stockgame/" data-i18n="startStock">단타 적성검사 시작하기</a>
+            <a class="secondary" href="/crypto-futures-test.html" data-i18n="viewCoinDetail">코인선물 적성검사 보기</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true"><img src="/assets/cards/stock-trading.svg" alt=""></div>
+      </section>
+      <article class="content">
+        <section lang="ko" data-locale="ko">
+          <h2>단타 적성검사란?</h2>
+          <p>단타 적성검사는 종목명을 모른 채 실제 과거 미국 주식 일봉 차트를 보면서 매수와 매도 판단을 해보는 주식 단타 게임입니다. 차트 패턴, 추세, 변동성, 진입 타이밍, 청산 타이밍을 직접 선택하고 결과를 확인할 수 있습니다.</p>
+          <p>주식 차트 공부, 차트 읽기 연습, 단타 매매 감각 테스트, 트레이딩 심리 확인처럼 검색되는 주제에 맞춰 만든 브라우저 기반 모의 체험입니다. 별도 설치 없이 모바일과 데스크톱 브라우저에서 바로 실행할 수 있습니다.</p>
+          <p>주식 단타 연습, 단타 매매 테스트, 주식 차트 게임, 매수 매도 타이밍 연습, 미국 주식 과거 차트 기반 모의투자 게임을 찾는 사용자에게 단순하지만 집중도 높은 플레이 경험을 제공합니다.</p>
+        </section>
+        <section data-locale="ko">
+          <h2>게임 화면</h2>
+          <div class="shots">
+            <figure class="shot"><a href="/assets/screenshots/stock-intro.png" target="_blank" rel="noopener"><img src="/assets/screenshots/stock-intro.png" alt="단타 적성검사 시작 화면" loading="lazy"></a><figcaption>규칙과 시작 버튼</figcaption></figure>
+            <figure class="shot"><a href="/assets/screenshots/stock-chart.png" target="_blank" rel="noopener"><img src="/assets/screenshots/stock-chart.png" alt="미국 주식 과거 차트 화면" loading="lazy"></a><figcaption>과거 차트 미리보기</figcaption></figure>
+            <figure class="shot"><a href="/assets/screenshots/stock-trade.png" target="_blank" rel="noopener"><img src="/assets/screenshots/stock-trade.png" alt="매수 매도 조작 화면" loading="lazy"></a><figcaption>매수·매도 플레이</figcaption></figure>
+          </div>
+        </section>
+        <section lang="en" data-locale="en" hidden>
+          <h2>What Is the Stock Day-Trading Test?</h2>
+          <p>The Stock Day-Trading Test is a browser game that lets you read real historical U.S. stock charts without seeing the company name. You choose entries and exits, then compare your trading result with the chart outcome.</p>
+          <p>It is designed for people searching for a stock chart game, day trading simulator, trading aptitude test, chart reading practice, buy and sell timing practice, or a lightweight way to test trading instincts without installing software.</p>
+          <p>It also works as a historical stock chart quiz, paper trading game, technical analysis practice tool, buy and sell timing exercise, and trading instincts test for anyone who wants a quick browser-based trading challenge.</p>
+        </section>
+        <section data-locale="en" hidden>
+          <h2>Game Screenshots</h2>
+          <div class="shots">
+            <figure class="shot"><a href="/assets/screenshots/stock-intro.png" target="_blank" rel="noopener"><img src="/assets/screenshots/stock-intro.png" alt="Stock Day-Trading Test start screen" loading="lazy"></a><figcaption>Rules and start button</figcaption></figure>
+            <figure class="shot"><a href="/assets/screenshots/stock-chart.png" target="_blank" rel="noopener"><img src="/assets/screenshots/stock-chart.png" alt="Historical U.S. stock chart screen" loading="lazy"></a><figcaption>Historical chart preview</figcaption></figure>
+            <figure class="shot"><a href="/assets/screenshots/stock-trade.png" target="_blank" rel="noopener"><img src="/assets/screenshots/stock-trade.png" alt="Buy and sell trading controls" loading="lazy"></a><figcaption>Buy and sell gameplay</figcaption></figure>
+          </div>
+        </section>
+        <section data-locale="ko">
+          <h2>이용 안내</h2>
+          <p class="notice">이 서비스는 재미와 교육을 위한 모의 게임이며 투자 조언이나 투자 권유가 아닙니다. 과거 차트 결과는 실제 투자 성과를 보장하지 않습니다.</p>
+          <div class="actions">
+            <a class="primary" href="/stockgame/" data-i18n="startStock">단타 적성검사 시작하기</a>
+          </div>
+        </section>
+        <section data-locale="en" hidden>
+          <h2>Important Notice</h2>
+          <p class="notice">This service is a simulation for entertainment and education only. It is not investment advice, and historical chart results do not predict real trading performance.</p>
+          <div class="actions">
+            <a class="primary" href="/stockgame/" data-i18n="startStock">단타 적성검사 시작하기</a>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer>
+    <div class="shell footer-inner">
+      <span>Copyright © 2026 리메이지. All rights reserved.</span>
+      <div class="footer-links"><a href="/">Apps</a><a href="/privacy.html" data-i18n="navPrivacy">개인정보처리방침</a></div>
+    </div>
+  </footer>
+  <script src="/lang.js?v=6"></script>
+</body>
+</html>
