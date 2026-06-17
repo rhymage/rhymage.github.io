@@ -102,7 +102,7 @@
     .app-card {
       min-width: 0;
       display: grid;
-      grid-template-columns: 42px minmax(0, 1fr) 20px;
+      grid-template-columns: 52px minmax(0, 1fr) 20px;
       align-items: center;
       gap: 14px;
       padding: 18px;
@@ -117,23 +117,27 @@
       box-shadow: 0 8px 24px rgba(24, 27, 22, .06);
       transform: translateY(-2px);
     }
-    .icon {
-      width: 42px;
+    .thumb {
+      width: 52px;
       height: 42px;
       display: grid;
       place-items: center;
       border-radius: 11px;
       background: var(--soft);
-      color: #555a54;
-      font-size: 16px;
-      font-weight: 750;
+      overflow: hidden;
     }
-    .stock .icon { color: #986413; background: #fbf3e4; }
-    .coin .icon { color: #3b648b; background: #ebf3f8; }
-    .chrome .icon { color: #31724a; background: #eaf5ed; }
-    .unreal .icon { color: #3f647c; background: #eaf1f5; }
-    .ae .icon { color: #6351a4; background: #f0edfa; }
-    .c4d .icon { color: #456aa8; background: #edf2fa; }
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .stock .thumb { background: #fbf3e4; }
+    .coin .thumb { background: #ebf3f8; }
+    .chrome .thumb { background: #eaf5ed; }
+    .unreal .thumb { background: #eaf1f5; }
+    .ae .thumb { background: #f0edfa; }
+    .c4d .thumb { background: #edf2fa; }
     .app-card h2 {
       margin: 0 0 4px;
       overflow: hidden;
@@ -216,10 +220,10 @@
         <h2 class="category-title" id="web-title">Web Apps</h2>
         <div class="apps">
           <a class="app-card stock" href="/stockgame/">
-            <span class="icon" aria-hidden="true">ST</span><span><h2 data-i18n="stockTitle">단타 적성검사</h2><p data-i18n="stockDesc">차트만 보고 확인하는 단타 감각</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="thumb" aria-hidden="true"><img src="/assets/cards/stock-trading.svg" alt=""></span><span><h2 data-i18n="stockTitle">단타 적성검사</h2><p data-i18n="stockDesc">차트만 보고 확인하는 단타 감각</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a class="app-card coin" href="/coingame/">
-            <span class="icon" aria-hidden="true">₿</span><span><h2 data-i18n="coinTitle">코인선물 적성검사</h2><p data-i18n="coinDesc">롱·숏 선택으로 확인하는 선물 감각</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="thumb" aria-hidden="true"><img src="/assets/cards/crypto-futures.svg" alt=""></span><span><h2 data-i18n="coinTitle">코인선물 적성검사</h2><p data-i18n="coinDesc">롱·숏 선택으로 확인하는 선물 감각</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </section>
@@ -228,10 +232,10 @@
         <h2 class="category-title" id="chrome-title">Chrome Extensions</h2>
         <div class="apps">
           <a class="app-card chrome" href="https://chromewebstore.google.com/detail/ooiefahkbgmnkkhpkcgdamjeifpdmjmg?utm_source=item-share-cb" target="_blank" rel="noopener">
-            <span class="icon" aria-hidden="true">T</span><span><h2 data-i18n="tashboardTitle">Tashboard</h2><p data-i18n="tashboardDesc">로컬 프로젝트, 링크, 폴더와 메모 대시보드</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="thumb" aria-hidden="true"><img src="/assets/cards/tashboard.svg" alt=""></span><span><h2 data-i18n="tashboardTitle">Tashboard</h2><p data-i18n="tashboardDesc">로컬 프로젝트, 링크, 폴더와 메모 대시보드</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a class="app-card chrome" href="https://chromewebstore.google.com/detail/heeimdekdnjlhjjpkiojhedbcffiomob?utm_source=item-share-cb" target="_blank" rel="noopener">
-            <span class="icon" aria-hidden="true">P</span><span><h2 data-i18n="pinterDownloaderTitle">PinterDownloader</h2><p data-i18n="pinterDownloaderDesc">핀터레스트 이미지를 고화질로 한 번에 다운로드</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="thumb" aria-hidden="true"><img src="/assets/cards/pinter-downloader.svg" alt=""></span><span><h2 data-i18n="pinterDownloaderTitle">PinterDownloader</h2><p data-i18n="pinterDownloaderDesc">핀터레스트 이미지를 고화질로 한 번에 다운로드</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </section>
@@ -240,13 +244,13 @@
         <h2 class="category-title" id="unreal-title">Unreal Engine</h2>
         <div class="apps">
           <a class="app-card unreal" href="https://www.fab.com/listings/be30b887-cdde-4ce0-8a7c-b180580f0b71" target="_blank" rel="noopener">
-            <span class="icon" aria-hidden="true">RT</span><span><h2 data-i18n="renderToggleTitle">Render Toggle</h2><p data-i18n="renderToggleDesc">렌더링 옵션을 빠르게 전환하는 에디터 플러그인</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="thumb" aria-hidden="true"><img src="/assets/cards/render-toggle.svg" alt=""></span><span><h2 data-i18n="renderToggleTitle">Render Toggle</h2><p data-i18n="renderToggleDesc">렌더링 옵션을 빠르게 전환하는 에디터 플러그인</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a class="app-card unreal" href="https://www.fab.com/listings/e7fc51cf-6316-4d11-9898-df4152f45600" target="_blank" rel="noopener">
-            <span class="icon" aria-hidden="true">OH</span><span><h2 data-i18n="outlinerHierarchyTitle">Outliner Hierarchy Actions</h2><p data-i18n="outlinerHierarchyDesc">하이어라키를 일괄 복제하고 삭제하는 플러그인</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="thumb" aria-hidden="true"><img src="/assets/cards/outliner-hierarchy.svg" alt=""></span><span><h2 data-i18n="outlinerHierarchyTitle">Outliner Hierarchy Actions</h2><p data-i18n="outlinerHierarchyDesc">하이어라키를 일괄 복제하고 삭제하는 플러그인</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a class="app-card unreal" href="https://www.fab.com/listings/e57b4634-59be-4f00-b10a-a8eeeb185aed" target="_blank" rel="noopener">
-            <span class="icon" aria-hidden="true">NG</span><span><h2 data-i18n="nullGroupTitle">Null Group</h2><p data-i18n="nullGroupDesc">Cinema 4D 스타일의 Null 그룹핑 플러그인</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="thumb" aria-hidden="true"><img src="/assets/cards/null-group.svg" alt=""></span><span><h2 data-i18n="nullGroupTitle">Null Group</h2><p data-i18n="nullGroupDesc">Cinema 4D 스타일의 Null 그룹핑 플러그인</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </section>
@@ -255,7 +259,7 @@
         <h2 class="category-title" id="ae-title">After Effects</h2>
         <div class="apps">
           <a class="app-card ae" href="https://aescripts.com/import-from/" target="_blank" rel="noopener">
-            <span class="icon" aria-hidden="true">Ae</span><span><h2 data-i18n="importFromTitle">Import From</h2><p data-i18n="importFromDesc">지정한 위치에서 바로 Import 창 열기</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="thumb" aria-hidden="true"><img src="/assets/cards/import-from.svg" alt=""></span><span><h2 data-i18n="importFromTitle">Import From</h2><p data-i18n="importFromDesc">지정한 위치에서 바로 Import 창 열기</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </section>
@@ -264,7 +268,7 @@
         <h2 class="category-title" id="c4d-title">Cinema 4D</h2>
         <div class="apps">
           <a class="app-card c4d" href="https://rhymage.gumroad.com/l/bbLu" target="_blank" rel="noopener">
-            <span class="icon" aria-hidden="true">C4D</span><span><h2 data-i18n="rhCharacterToolsTitle">RH Character Tools</h2><p data-i18n="rhCharacterToolsDesc">Mixamo 캐릭터 자동 컨트롤셋 툴 모음</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="thumb" aria-hidden="true"><img src="/assets/cards/rh-character-tools.svg" alt=""></span><span><h2 data-i18n="rhCharacterToolsTitle">RH Character Tools</h2><p data-i18n="rhCharacterToolsDesc">Mixamo 캐릭터 자동 컨트롤셋 툴 모음</p></span><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </section>
@@ -280,6 +284,6 @@
       </div>
     </div>
   </footer>
-  <script src="/lang.js?v=4"></script>
+  <script src="/lang.js?v=5"></script>
 </body>
 </html>

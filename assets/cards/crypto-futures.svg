@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 84" role="img" aria-label="Crypto futures thumbnail">
+  <rect width="104" height="84" rx="20" fill="#ebf3f8"/>
+  <rect x="16" y="17" width="72" height="50" rx="11" fill="#f8fcff" stroke="#c8ddea"/>
+  <path d="M28 28v29M42 23v33M56 30v27M70 21v36" stroke="#8bb4cb" stroke-width="2" stroke-linecap="round"/>
+  <rect x="24" y="34" width="8" height="15" rx="3" fill="#3b648b"/>
+  <rect x="38" y="28" width="8" height="19" rx="3" fill="#d27d52"/>
+  <rect x="52" y="38" width="8" height="12" rx="3" fill="#3b648b"/>
+  <rect x="66" y="27" width="8" height="22" rx="3" fill="#d27d52"/>
+  <circle cx="82" cy="58" r="10" fill="#3b648b"/>
+  <path d="M82 52v12M78 55h6a3 3 0 0 1 0 6h-6" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
+</svg>

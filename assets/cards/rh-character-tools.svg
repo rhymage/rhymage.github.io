@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 84" role="img" aria-label="Character rig thumbnail">
+  <rect width="104" height="84" rx="20" fill="#edf2fa"/>
+  <rect x="18" y="16" width="68" height="52" rx="12" fill="#fbfdff" stroke="#cbd9ef"/>
+  <circle cx="52" cy="27" r="7" fill="#456aa8"/>
+  <path d="M52 35v16M38 43h28M52 51 39 61M52 51l13 10" stroke="#456aa8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="38" cy="43" r="4" fill="#8faad3"/>
+  <circle cx="66" cy="43" r="4" fill="#8faad3"/>
+  <circle cx="39" cy="61" r="4" fill="#8faad3"/>
+  <circle cx="65" cy="61" r="4" fill="#8faad3"/>
+</svg>

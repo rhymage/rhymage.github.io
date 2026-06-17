@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 84" role="img" aria-label="Stock chart thumbnail">
+  <rect width="104" height="84" rx="20" fill="#fbf3e4"/>
+  <rect x="14" y="18" width="76" height="48" rx="10" fill="#fffaf0" stroke="#ead4aa"/>
+  <path d="M22 54h60M22 42h60M22 30h60" stroke="#ead4aa" stroke-width="1.4"/>
+  <path d="M24 55c8-11 13-8 19-15 6-8 11 2 17-5 6-8 11-9 22-13" fill="none" stroke="#986413" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="82" cy="22" r="4" fill="#c78419"/>
+</svg>

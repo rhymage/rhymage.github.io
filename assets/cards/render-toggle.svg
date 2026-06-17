@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 84" role="img" aria-label="Render toggle thumbnail">
+  <rect width="104" height="84" rx="20" fill="#eaf1f5"/>
+  <rect x="17" y="17" width="70" height="50" rx="12" fill="#fbfdff" stroke="#c7dbe7"/>
+  <rect x="27" y="28" width="50" height="8" rx="4" fill="#c7dbe7"/>
+  <circle cx="61" cy="32" r="7" fill="#3f647c"/>
+  <rect x="27" y="47" width="50" height="8" rx="4" fill="#c7dbe7"/>
+  <circle cx="43" cy="51" r="7" fill="#7fa5ba"/>
+  <path d="M32 17l55 50" stroke="#eaf1f5" stroke-width="8" opacity=".8"/>
+</svg>
